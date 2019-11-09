@@ -1,8 +1,12 @@
 import React from "react";
 
 import "./App.css";
-import Product from "../product/product";
 
+//Components
+import Product from "../product/product";
+import WishList from "../wishlist/wishList";
+
+//Services
 import HttpService from "../services/http-service";
 
 const http = new HttpService();
@@ -45,8 +49,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="App-main container">
-          <div className="row">{this.productList()}</div>
+        <div className="App-main container-fluid">
+          <div className="row">
+            <div className="col-sm-8">
+              <div className="row">{this.productList()}</div>
+            </div>
+            <div className="col-sm-4">
+              <WishList />
+            </div>
+          </div>
         </div>
       </div>
     );
