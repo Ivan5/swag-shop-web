@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./wishList.css";
+import DataService from "../services/data-services";
 
 import ProductCondensed from "../product-condensed/product-condensed";
 
@@ -7,7 +8,9 @@ class Wishlist extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { wishList: [{ title: "" }] };
+    this.state = {
+      wishList: [{ title: "Bologna Killer", price: 23.99, _id: "sjkld" }]
+    };
 
     this.createWishList = this.createWishList.bind(this);
   }
